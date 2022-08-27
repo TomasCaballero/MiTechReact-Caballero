@@ -1,0 +1,28 @@
+#contenido h3 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#contenido #articulos .card img {
+    justify-self: center;
+}
+#contenido #articulos .card .card-body .articulo {
+    text-align: center;
+}
+#contenido #articulos .card .card-body .precio {
+    text-align: center;
+}
+#contenido #articulos .card .card-body .add-to-cart {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 0px;
+    border-radius: 10px;
+}
+#contenido #articulos .card .card-body .add-to-cart:hover {
+    -webkit-text-decoration: underline white;
+            text-decoration: underline white;
+    transform: scale(1.05, 1.05);
+    transition: all 500ms;
+}

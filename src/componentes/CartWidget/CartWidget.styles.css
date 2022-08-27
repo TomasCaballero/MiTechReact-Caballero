@@ -1,0 +1,14 @@
+.btn{
+    border: solid 0px;
+}
+.bnt:hover{
+    transform: scale(1.1,1.1);
+    transition: all 500ms;
+}
+ion-icon {
+    font-size: 24px;
+}
+ion-icon:hover {
+    transform: scale(1.05,1.05);
+    transition: all 500ms;
+}
