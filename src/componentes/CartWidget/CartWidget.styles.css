@@ -1,3 +1,7 @@
+.btn-container{
+    margin-top: 0px;
+    padding-top: 10px;
+}
 .btn{
     border: solid 0px;
 }
@@ -11,4 +15,11 @@ ion-icon {
 ion-icon:hover {
     transform: scale(1.05,1.05);
     transition: all 500ms;
+}
+.contador{
+    position: relative;
+    right: -12px;
+    top: 15px;
+    margin: 0px;
+    padding: 0px;
 }
