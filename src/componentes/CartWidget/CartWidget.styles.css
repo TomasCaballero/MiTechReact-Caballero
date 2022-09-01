@@ -1,6 +1,5 @@
 .btn-container{
-    margin-top: 0px;
-    padding-top: 10px;
+    margin-top: 17px;
 }
 .btn{
     border: solid 0px;
@@ -16,10 +15,19 @@ ion-icon:hover {
     transform: scale(1.05,1.05);
     transition: all 500ms;
 }
-.contador{
-    position: relative;
-    right: -12px;
-    top: 15px;
-    margin: 0px;
-    padding: 0px;
+.contadorCarrito{
+    background-color: rgba(255, 0, 0, 0);
+    border: #f2f1f000 solid 1px;
+    border-radius: 50px;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+}
+.numero{
+    font-size: 15px;
+    position: absolute;
+    top: -7px;
+    left: 27px;
+    background-color: white;
+
 }

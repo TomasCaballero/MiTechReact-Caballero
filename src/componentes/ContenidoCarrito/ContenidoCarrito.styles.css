@@ -1,0 +1,23 @@
+.articulosCarrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: solid 0px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.articulosCarrito .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.articulosCarrito .card .card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.articulosCarrito .card .card-body img{
+    width: 50px;
+}
