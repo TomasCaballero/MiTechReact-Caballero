@@ -1,0 +1,10 @@
+*{
+    color: black;
+}
+.btn-success{
+    padding: 7px;
+    margin-right: 2px;
+}
+.btn-danger{
+    padding: 9px;
+}

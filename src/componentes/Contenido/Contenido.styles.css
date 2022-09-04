@@ -26,3 +26,6 @@
     transform: scale(1.05, 1.05);
     transition: all 500ms;
 }
+.titulo{
+    color: black;
+}

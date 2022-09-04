@@ -1,4 +1,3 @@
-import React from 'react'
 import './CartOffCanvas.styles.css'
 import ContenidoCarrito from '../ContenidoCarrito/ContenidoCarrito'
 
