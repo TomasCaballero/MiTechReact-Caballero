@@ -1,14 +1,27 @@
-import React from 'react'
-import './Contenido.styles.css'
+import data from "../MockData/MockData"
+import { useEffect, useState } from "react"
+import ItemList from "../ItemList/ItemList"
 
 const Contenido = () => {
+    const [productList, setProductList] = useState([])
+
+    useEffect(()=>{
+        getProducts.then((response)=>{
+            setProductList(response)
+        })
+    }, [])
+
+    const getProducts = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(data);
+        }, 2000);
+    });
+
+
   return (
-    <div id="contenido">
-        <h3 class="d-flex justify-content-center titulo">Productos en Stock</h3>
-        <div id="articulos" class="d-flex flex-wrap justify-content-around">
-                
-        </div>
-    </div>
+    <>
+        <ItemList lista={productList}/>
+    </>
   )
 }
 

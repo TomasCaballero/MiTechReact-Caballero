@@ -1,4 +1,8 @@
+.contenedorNavBar{
+    z-index: 5;
+}
 .navbar{
+    background-color: white;
     border: solid 0px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

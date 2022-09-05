@@ -5,12 +5,14 @@ import { useState } from 'react'
 let numero = document.querySelector('.numero');
 
 
-const ItemCounter = ({inicial}) => {
-    const [contador, setContador] = useState(inicial)
-    const [stock, setStock] = useState(5)
+const ItemCounter = ({}) => {
+    let valorInicial = 1;
+    let stockProductos = 5;
+    const [contador, setContador] = useState(valorInicial)
+    const [stock, setStock] = useState(stockProductos)
     
     const disminuir = ()=>{
-        if(contador === inicial){
+        if(contador === valorInicial){
             setContador(contador - 0)
         }else{
             setContador(contador - 1)
@@ -33,11 +35,10 @@ const ItemCounter = ({inicial}) => {
   return (
     <>
         <div className='mt-5'>
-            <h4>Iphone 11</h4>
             <div className='d-flex'>
                 <div className='mx-2'>Cantidad: <span>{contador}</span></div>
-                <button onClick={aumentar} className="btn btn-success">+</button>
-                <button onClick={disminuir} className="btn btn-danger">-</button>
+                <button onClick={aumentar} className="btn btn-dark mx-1">+</button>
+                <button onClick={disminuir} className="btn btn-dark">-</button>
             </div>
             <button className='btn btn-dark' onClick={agregarAlCarrito}>Agregar al carrito</button>
         </div>
