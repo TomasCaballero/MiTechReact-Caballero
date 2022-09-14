@@ -1,7 +1,7 @@
 import './Item.style.css'
 import ItemCounter from "../ItemCounter/ItemCounter"
 
-const Item = ({img, articulo, precio, id, valorInicial, stockProductos}) => {
+const Item = ({img, articulo, precio, id, valorInicial, stockProductos, bateria, memoria, ram}) => {
   return (
     <>
         <div className="card" key={id}>

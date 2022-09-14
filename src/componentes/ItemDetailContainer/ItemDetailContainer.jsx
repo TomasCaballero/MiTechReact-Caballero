@@ -1,25 +1,26 @@
-// import data from "../MockData/MockData"
-// import { useEffect, useState } from "react"
-// import ItemList from "../ItemList/ItemList"
+import data from "../MockData/MockData"
+import { useEffect, useState } from "react"
+import ItemDetail from "../ItemDetail/ItemDetail"
+
 
 const ItemDetailContainer = () => {
-    // const [productList, setProductList] = useState([])
+    const [productDetail, setProductDetail] = useState([])
 
-    // useEffect(()=>{
-    //     getProducts.then((response)=>{
-    //         setProductList(response)
-    //     })
-    // // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [])
+    useEffect(()=>{
+        getProducts.then((response)=>{
+          setProductDetail(response)
+        })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
-    // const getProducts = new Promise((resolve, reject)=>{
-    //     setTimeout(()=>{
-    //         resolve(data);
-    //     }, 2000);
-    // });
+    const getProducts = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(data);
+        }, 2000);
+    });
   return (
     <>
-    {/* //     <ItemList lista={productList}/> */}
+     <ItemDetail lista={productDetail}/>
     </>
   )
 }
