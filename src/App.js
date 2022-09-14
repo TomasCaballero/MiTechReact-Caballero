@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './componentes/Navbar/Navbar';
 import Titulo from './componentes/Titulo/Titulo';
 import CartOffCanvas from './componentes/CartOffCanvas/CartOffCanvas';
-import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
 // import ItemCounter from './componentes/ItemCounter/ItemCounter';
 import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer';
 
