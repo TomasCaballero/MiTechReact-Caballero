@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
 
     const getProducts = new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            resolve(data);
+          resolve(data.filter(e=>e.id === 1));
         }, 2000);
     });
   return (

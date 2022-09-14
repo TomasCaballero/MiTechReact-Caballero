@@ -16,8 +16,8 @@ function App() {
       <main className="App-header">
         <Titulo />
         <div>
-          <ItemListContainer/>
           <ItemDetailContainer/>
+          <ItemListContainer/>
         </div>
       </main>
     </div>
