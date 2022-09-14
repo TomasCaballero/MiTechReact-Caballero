@@ -9,8 +9,7 @@ const ItemListContainer = () => {
         getProducts.then((response)=>{
             setProductList(response)
         })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, )
 
     const getProducts = new Promise((resolve, reject)=>{
         setTimeout(()=>{

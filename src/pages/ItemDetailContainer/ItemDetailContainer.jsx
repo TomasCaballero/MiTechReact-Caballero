@@ -1,9 +1,9 @@
-import data from "../MockData/MockData"
+import data from "../../componentes/MockData/MockData"
 import { useEffect, useState } from "react"
-import ItemDetail from "../ItemDetail/ItemDetail"
+import ItemDetail from "../../componentes/ItemDetail/ItemDetail"
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({product}) => {
     const [productDetail, setProductDetail] = useState([])
 
     useEffect(()=>{

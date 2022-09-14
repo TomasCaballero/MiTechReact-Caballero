@@ -5,7 +5,7 @@ import { useState } from 'react'
 let numero = document.querySelector('.numero');
 
 
-const ItemCounter = ({}) => {
+const ItemCounter = () => {
     let valorInicial = 1;
     let stockProductos = 5;
     const [contador, setContador] = useState(valorInicial)
