@@ -1,3 +1,9 @@
 .card{
     width: 16rem;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 175px;
 }

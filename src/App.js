@@ -6,6 +6,8 @@ import CartOffCanvas from './componentes/CartOffCanvas/CartOffCanvas';
 import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
 // import ItemCounter from './componentes/ItemCounter/ItemCounter';
 import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer';
+import ItemFilterMarca from './pages/ItemFilterMarca/ItemFilterMarca';
+
 
 
 function App() {
@@ -19,22 +21,10 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/" element={<ItemListContainer/>}/>
+          <Route path="category/:marca" element={<ItemFilterMarca/>}/>
           <Route path='details/:id' element={<ItemDetailContainer/>}/>
         </Routes>
       </BrowserRouter>
-
-
-    // <div className="App">
-    //   <Navbar />
-    //   <CartOffCanvas />
-    //   <main className="App-header">
-    //     <Titulo />
-    //     <div>
-    //       <ItemDetailContainer/>
-    //       <ItemListContainer/>
-    //     </div>
-    //   </main>
-    // </div>
   );
 }
 

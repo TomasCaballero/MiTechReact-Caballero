@@ -7,17 +7,19 @@ const ItemDetail = ({lista}) => {
         {
             lista.map((product) => (
               <div className="card" key={product.id}>
-              <img src={product.img} alt={product.articulo} width={'200px'}/>
-              <div className="card-body">
+                <div className='imgTitulo'>
+                  <img src={product.img} alt={product.articulo} width={'200px'}/>
                   <h5>{product.articulo}</h5>
                   <p>uS${product.precio}</p>
-                  <hr />
-                  <h5>Detalles:</h5>
-                  <p>Bateria: {product.bateria}mAh</p>
-                  <p>Almacenamiento: {product.memoria}GB</p>
-                  <p>Memoria RAM: {product.ram}GB</p>
+                </div>
+                <div className="card-body">
+                    {/* <hr /> */}
+                    <h5>Detalles:</h5>
+                    <p>Bateria: {product.bateria}mAh</p>
+                    <p>Almacenamiento: {product.memoria}GB</p>
+                    <p>Memoria RAM: {product.ram}GB</p>
+                </div>
               </div>
-          </div>
           )) 
         }
   </div>

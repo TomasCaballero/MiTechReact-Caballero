@@ -3,13 +3,16 @@ import React from 'react'
 import './Navbar.styles.css'
 import CartWidget from '../CartWidget/CartWidget'
 
+
 const Navbar = () => {
+  // const filtrarMarca = data.filter(product=>product.id === parseInt(idParams)
+  
   return (
     <div className='contenedorNavBar'>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <div className='divIconoMarca'>
-            <Link to={"/"}>
+            <Link to={"/"} style={{ textDecoration: 'none'}}>
               <div className="navbar-brand iconoMarca" role="button"><ion-icon className="mx-1" name="infinite-outline"></ion-icon>MiTech</div>
             </Link>
           </div>
@@ -19,7 +22,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item d-flex justify-content-center align-content-center">
-                <Link to={"/"}>
+                <Link to={"/"} style={{ textDecoration: 'none'}}>
                   <div className="nav-link active" aria-current="page" role="button">Home</div>
                 </Link>
               </li>
@@ -28,19 +31,35 @@ const Navbar = () => {
                   Marcas
                 </div>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><div className="dropdown-item filtroGoogle">Google</div></li>
-                  <li><div className="dropdown-item filtroHuawei">Huawei</div></li>
-                  <li><div className="dropdown-item filtroApple">Apple</div></li>
-                  <li><div className="dropdown-item filtroNothing">Nothing</div></li>
-                  <li><div className="dropdown-item filtroOnePlus">OnePlus</div></li>
-                  <li><div className="dropdown-item filtroSamsung">Samsung</div></li>
-                  <li><div className="dropdown-item filtroXiaomi">Xiaomi</div></li>
-                  <li><hr className="dropdown-divider"/></li>
-                  <li><div className="dropdown-item sinFiltro">Todas las marcas</div></li>
+                  <Link to={"category/google"} style={{ textDecoration: 'none'}}>
+                    <li><div className="dropdown-item filtroGoogle" onClick={console.log()}>Google</div></li>
+                  </Link>
+                  <Link to={"category/huawei"} style={{ textDecoration: 'none'}}>
+                   <li><div className="dropdown-item filtroHuawei">Huawei</div></li>
+                  </Link>
+                  <Link to={"category/apple"} style={{ textDecoration: 'none'}}>
+                   <li><div className="dropdown-item filtroApple">Apple</div></li>
+                  </Link>
+                  <Link to={"category/nothing"} style={{ textDecoration: 'none'}}>
+                   <li><div className="dropdown-item filtroNothing">Nothing</div></li>
+                  </Link>
+                  <Link to={"category/oneplus"} style={{ textDecoration: 'none'}}>
+                    <li><div className="dropdown-item filtroOnePlus">OnePlus</div></li>
+                  </Link>
+                  <Link to={"category/samsung"} style={{ textDecoration: 'none'}}>
+                    <li><div className="dropdown-item filtroSamsung">Samsung</div></li>
+                  </Link>
+                  <Link to={"category/xiaomi"} style={{ textDecoration: 'none'}}>
+                    <li><div className="dropdown-item filtroXiaomi">Xiaomi</div></li>
+                  </Link>
+                    <li><hr className="dropdown-divider"/></li>
+                  <Link to={"/"} style={{ textDecoration: 'none'}}>
+                    <li><div className="dropdown-item sinFiltro">Todas las marcas</div></li>
+                  </Link>
                 </ul>
               </li>
               <li className="nav-item d-flex justify-content-center align-content-center">
-                <Link to={"/contacto"}>
+                <Link to={"/contacto"} style={{ textDecoration: 'none'}}>
                   <div className="nav-link active" aria-current="page" role="button">Contacto</div>
                 </Link>
               </li>
