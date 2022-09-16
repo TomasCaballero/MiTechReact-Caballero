@@ -29,47 +29,4 @@ const ItemDetailContainer = ({product}) => {
     </>
   )
 }
-export default ItemDetailContainer;
-
-// const [productDetail, setProductDetail] = useState([])
-
-  // useEffect(()=>{
-  //     getProducts.then((response)=>{
-  //       setProductDetail(response)
-  //     })
-  // },/*[]*/)
-
-  // const getProducts = new Promise((resolve, reject)=>{
-  //     setTimeout(()=>{
-  //       resolve(data/*.filter(e=>e.id === 1)*/);
-  //     }, 2000);
-  // });
-
-
-// const [productDetail, setProductDetail] = useState([])
-  // const getProducts = ()=>{
-  //   fetch(data)
-  //   .then((res)=>res.json())
-  //   .then(product => {
-  //     console.log(product)
-  //   })
-  // }
-
-
-  // useEffect(()=>{
-  //     getProducts.then((response)=>{
-  //      setProductDetail(response)
-  //    })
-  // },/*[]*/)
-
-
-
-
-
-
-
-    
-
-
-
-  
+export default ItemDetailContainer;  
