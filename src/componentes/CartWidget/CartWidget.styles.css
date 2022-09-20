@@ -23,7 +23,7 @@ ion-icon:hover {
     height: 17px;
     position: absolute;
 }
-.numero{
+#numero{
     font-size: 15px;
     position: absolute;
     top: -7px;

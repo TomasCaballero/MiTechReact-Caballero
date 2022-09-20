@@ -1,7 +1,13 @@
 import './ItemDetail.style.css'
+import ItemCounter from '../ItemCounter/ItemCounter';
+import { useState } from 'react';
 
 
 const ItemDetail = ({lista}) => {
+  let valorInicial = 1;
+  let stockProductos = 5;
+  const [contador, setContador] = useState(valorInicial)
+  const [stock, setStock] = useState(stockProductos)
   return (
   <div className="contenedorProductos">
         {
@@ -18,6 +24,8 @@ const ItemDetail = ({lista}) => {
                     <p>Bateria: {product.bateria}mAh</p>
                     <p>Almacenamiento: {product.memoria}GB</p>
                     <p>Memoria RAM: {product.ram}GB</p>
+                    <hr/>
+                    <ItemCounter valorInicial={valorInicial} stockProductos={stockProductos} setContador={setContador} setStock={setStock} contador={contador} stock={stock}/>
                 </div>
               </div>
           )) 

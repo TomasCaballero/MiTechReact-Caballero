@@ -1,50 +1,52 @@
 import './ItemCounter.style.css'
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
-let numero = document.querySelector('.numero');
+
+let numero = document.querySelector('#numero');
 
 
-const ItemCounter = () => {
-    let valorInicial = 1;
-    let stockProductos = 5;
-    const [contador, setContador] = useState(valorInicial)
-    const [stock, setStock] = useState(stockProductos)
-    
+const ItemCounter = ({setContador, setStock, valorInicial, stockProductos, contador, stock}) => {
+
     const disminuir = ()=>{
         if(contador === valorInicial){
-            setContador(contador - 0)
-        }else{
-            setContador(contador - 1)
+            return;
         }
+        setContador(contador - 1)
+        
     }
 
     const aumentar = ()=>{
-        if(contador === stock){
-            setContador(contador + 0)
-        }else{
-            setContador(contador + 1)
+        if(contador === stockProductos){
+            return;
         }
+        setContador(contador + 1)
     }
 
-    const agregarAlCarrito = ()=>{
+    const onAdd = ()=>{
         numero.innerHTML = parseInt(numero.innerHTML)  + parseInt(contador);
         setStock(stock - contador)
+
     }
     
-  return (
+    
+    return (
     <>
-        <div className='mt-5'>
+        <div className='mt-5 itemCounter'>
             <div className='d-flex'>
+                <div onClick={disminuir} className="btnDisminuir" role='button'>-</div>
                 <div className='mx-2'>Cantidad: <span>{contador}</span></div>
-                <button onClick={disminuir} className="btn btn-dark">-</button>
-                <button onClick={aumentar} className="btn btn-dark mx-1">+</button>
+                <div onClick={aumentar} className="btnAumentar" role='button'>+</div>
             </div>
-            <button className='btn btn-dark mt-1 pl-2' onClick={agregarAlCarrito}>Agregar al carrito</button>
+            <button className='btn btn-dark mt-1 pl-2 addToCart' onClick={onAdd}>Agregar al carrito</button>
         </div>
+        <hr/>
+        <Link to={"/cart"} style={{ textDecoration: 'none'}} className='irAlCarrito'>
+                <button className='btn btn-dark mt-1 pl-2 addToCart'>Ir al Carrito</button>
+        </Link>
     </>
     
-  )
+    )
 }
 
 export default ItemCounter

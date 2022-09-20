@@ -1,7 +1,6 @@
 import './Item.style.css'
-import ItemCounter from "../ItemCounter/ItemCounter"
 
-const Item = ({img, articulo, precio, id, marca, valorInicial, stockProductos}) => {
+const Item = ({img, articulo, precio, id, marca}) => {
   return (
     <>
         <div className="card" key={id} role="button">
@@ -10,8 +9,6 @@ const Item = ({img, articulo, precio, id, marca, valorInicial, stockProductos}) 
                 <h5>{articulo}</h5>
                 <p>uS${precio}</p>
                 <span style={{display: 'none'}}>{marca}</span>
-                <hr/>
-                <ItemCounter inicial={valorInicial} stock={stockProductos}/>
             </div>
         </div>
     </>

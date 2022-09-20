@@ -35,13 +35,13 @@ const Navbar = () => {
                     <li><div className="dropdown-item filtroGoogle" onClick={console.log()}>Google</div></li>
                   </Link>
                   <Link to={"category/huawei"} style={{ textDecoration: 'none'}}>
-                   <li><div className="dropdown-item filtroHuawei">Huawei</div></li>
+                    <li><div className="dropdown-item filtroHuawei">Huawei</div></li>
                   </Link>
                   <Link to={"category/apple"} style={{ textDecoration: 'none'}}>
-                   <li><div className="dropdown-item filtroApple">Apple</div></li>
+                    <li><div className="dropdown-item filtroApple">Apple</div></li>
                   </Link>
                   <Link to={"category/nothing"} style={{ textDecoration: 'none'}}>
-                   <li><div className="dropdown-item filtroNothing">Nothing</div></li>
+                    <li><div className="dropdown-item filtroNothing">Nothing</div></li>
                   </Link>
                   <Link to={"category/oneplus"} style={{ textDecoration: 'none'}}>
                     <li><div className="dropdown-item filtroOnePlus">OnePlus</div></li>
