@@ -1,9 +1,8 @@
 import './ItemCounter.style.css'
-import { Link } from 'react-router-dom'
 
 
 
-let numero = document.querySelector('#numero');
+
 
 
 const ItemCounter = ({setContador, setStock, valorInicial, stockProductos, contador, stock}) => {
@@ -22,13 +21,6 @@ const ItemCounter = ({setContador, setStock, valorInicial, stockProductos, conta
         }
         setContador(contador + 1)
     }
-
-    const onAdd = ()=>{
-        numero.innerHTML = parseInt(numero.innerHTML)  + parseInt(contador);
-        setStock(stock - contador)
-
-    }
-    
     
     return (
     <>
@@ -38,11 +30,7 @@ const ItemCounter = ({setContador, setStock, valorInicial, stockProductos, conta
                 <div className='mx-2'>Cantidad: <span>{contador}</span></div>
                 <div onClick={aumentar} className="btnAumentar" role='button'>+</div>
             </div>
-            <button className='btn btn-dark mt-1 pl-2 addToCart' onClick={onAdd}>Agregar al carrito</button>
         </div>
-        <Link to={"/cart"} style={{ textDecoration: 'none'}} className='irAlCarrito mt-1'>
-                <button className='btn btn-dark mt-1 pl-2 addToCart'>Ir al Carrito</button>
-        </Link>
     </>
     
     )
