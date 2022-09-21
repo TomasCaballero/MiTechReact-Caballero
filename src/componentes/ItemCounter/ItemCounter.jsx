@@ -40,8 +40,7 @@ const ItemCounter = ({setContador, setStock, valorInicial, stockProductos, conta
             </div>
             <button className='btn btn-dark mt-1 pl-2 addToCart' onClick={onAdd}>Agregar al carrito</button>
         </div>
-        <hr/>
-        <Link to={"/cart"} style={{ textDecoration: 'none'}} className='irAlCarrito'>
+        <Link to={"/cart"} style={{ textDecoration: 'none'}} className='irAlCarrito mt-1'>
                 <button className='btn btn-dark mt-1 pl-2 addToCart'>Ir al Carrito</button>
         </Link>
     </>

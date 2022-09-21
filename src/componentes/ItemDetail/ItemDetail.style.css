@@ -5,3 +5,13 @@
     align-items: center;
     gap: 2rem;
 }
+.imgTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: solid 1px;
+}
+.divisor{
+    border-bottom: solid 1px;
+}

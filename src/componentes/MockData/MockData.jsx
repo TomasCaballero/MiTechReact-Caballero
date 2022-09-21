@@ -6,9 +6,9 @@ const data = [
         articulo:'Google Pixel 6A',
         precio: 450, 
         img:'assets/img/celulares/googlePixel6A.webp', 
-        memoria:128, 
-        ram: 12,
-        bateria: 4500
+        memoria: 128, 
+        ram: 6,
+        bateria: 4410
     },
     {
         id:2,
@@ -17,9 +17,9 @@ const data = [
         articulo:'Google Pixel 6 Pro', 
         precio: 800, 
         img:'assets/img/celulares/googlePixel6Pro.jpg', 
-        memoria:128, 
+        memoria:512, 
         ram: 12, 
-        bateria: 4500
+        bateria: 5000
     },
     {
         id:3, 
@@ -29,8 +29,8 @@ const data = [
         precio: 520, 
         img:'assets/img/celulares/huaweiP40.jpg', 
         memoria:128, 
-        ram: 12, 
-        bateria: 4500
+        ram: 8, 
+        bateria: 3800
     },
     {
         id:4, 
@@ -39,9 +39,9 @@ const data = [
         articulo:'Huawei P50', 
         precio: 850 , 
         img:'assets/img/celulares/huaweiP50.webp', 
-        memoria:128, 
-        ram: 12, 
-        bateria: 4500
+        memoria:256, 
+        ram: 8, 
+        bateria: 4100
     },
     {
         id:5, 
@@ -50,9 +50,9 @@ const data = [
         articulo:'Iphone 13', 
         precio: 830, 
         img:'assets/img/celulares/iphone13.jpg', 
-        memoria:128, 
-        ram: 12, 
-        bateria: 4500
+        memoria:512, 
+        ram: 4, 
+        bateria: 3227
     },
     {
         id:6, 
@@ -61,9 +61,9 @@ const data = [
         articulo:'Iphone 13 Pro Max', 
         precio: 1250, 
         img:'assets/img/celulares/iphone13ProMax.jpg', 
-        memoria:128, 
-        ram: 12, 
-        bateria: 4500
+        memoria:512, 
+        ram: 6, 
+        bateria: 4352
     },
     {
         id:7, 
@@ -72,7 +72,7 @@ const data = [
         articulo:'Nothing Phone 1', 
         precio: 470, 
         img:'assets/img/celulares/nothingPhone1.webp', 
-        memoria:128, 
+        memoria:256, 
         ram: 12, 
         bateria: 4500
     },
@@ -83,7 +83,7 @@ const data = [
         articulo:'OnePlus 9 Pro', 
         precio: 670, 
         img:'assets/img/celulares/onePlus9Pro.jpg', 
-        memoria:128, 
+        memoria:256, 
         ram: 12, 
         bateria: 4500
     },
@@ -94,9 +94,9 @@ const data = [
         articulo:'OnePlus 10 Pro', 
         precio: 1000, 
         img:'assets/img/celulares/onePlus10Pro.jpg', 
-        memoria:128, 
-        ram:'12', 
-        bateria: 4500
+        memoria:256, 
+        ram:12, 
+        bateria: 5000
     },
     {
         id:10, 
@@ -105,9 +105,9 @@ const data = [
         articulo:'Samsung S22',
         precio: 690, 
         img:'assets/img/celulares/samsungS22Plus.png', 
-        memoria:128, 
-        ram: 12, 
-        bateria: 4500
+        memoria:256, 
+        ram: 8, 
+        bateria: 3700
     },
     {
         id:11, 
@@ -116,8 +116,8 @@ const data = [
         articulo:'Samsung S22 Plus', 
         precio: 995, 
         img:'assets/img/celulares/samsungS22.jpg', 
-        memoria:128, 
-        ram: 12, 
+        memoria: 256, 
+        ram: 8, 
         bateria: 4500
     },
     {
@@ -127,9 +127,9 @@ const data = [
         articulo:'Samsung S22 Ultra', 
         precio: 1200, 
         img:'assets/img/celulares/samsungS22Ultra.jpg', 
-        memoria:128, 
-        ram:12 , 
-        bateria: 4500
+        memoria: 1000, 
+        ram: 12, 
+        bateria: 5000
     },
     {
         id:13,
@@ -138,9 +138,9 @@ const data = [
         articulo:'Xiaomi Mi 11', 
         precio: 730, 
         img:'assets/img/celulares/xiaomiMi11.jpg', 
-        memoria:128, 
-        ram: 12, 
-        bateria: 4500
+        memoria: 256, 
+        ram: 8, 
+        bateria: 4600
     },
     {
         id:14,
@@ -149,9 +149,9 @@ const data = [
         articulo:'Xiaomi Mi 11 Ultra', 
         precio: 1200,
         img:'assets/img/celulares/xiaomiMi11Ultra.jpeg',
-        memoria:128, 
+        memoria: 512, 
         ram: 12, 
-        bateria: 4500
+        bateria: 5000
     }
 ];
 

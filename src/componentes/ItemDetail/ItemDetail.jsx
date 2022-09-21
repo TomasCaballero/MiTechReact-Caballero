@@ -16,15 +16,15 @@ const ItemDetail = ({lista}) => {
                 <div className='imgTitulo'>
                   <img src={product.img} alt={product.articulo} width={'200px'}/>
                   <h5>{product.articulo}</h5>
-                  <p>uS${product.precio}</p>
+                  <p><strong>uS${product.precio}</strong></p>
                 </div>
                 <div className="card-body">
-                    {/* <hr /> */}
+                  <div className='divisor'>
                     <h5>Detalles:</h5>
                     <p>Bateria: {product.bateria}mAh</p>
                     <p>Almacenamiento: {product.memoria}GB</p>
                     <p>Memoria RAM: {product.ram}GB</p>
-                    <hr/>
+                  </div>
                     <ItemCounter valorInicial={valorInicial} stockProductos={stockProductos} setContador={setContador} setStock={setStock} contador={contador} stock={stock}/>
                 </div>
               </div>
