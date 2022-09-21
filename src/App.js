@@ -4,8 +4,8 @@ import Navbar from './componentes/Navbar/Navbar';
 import Titulo from './componentes/Titulo/Titulo';
 import CartOffCanvas from './componentes/CartOffCanvas/CartOffCanvas';
 import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
-// import ItemCounter from './componentes/ItemCounter/ItemCounter';
 import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer';
+import { CartContext } from './context/cartContext';
 
 
 
@@ -13,6 +13,7 @@ import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer
 function App() {
   
   return (
+    <CartContext.Provider value={[]}>
       <BrowserRouter className="App App-header">
         <Navbar/>
         <CartOffCanvas/>
@@ -26,6 +27,8 @@ function App() {
           <Route path="cart" element={<ItemDetailContainer/>}/>
         </Routes>
       </BrowserRouter>
+    </CartContext.Provider>
+      
   );
 }
 
