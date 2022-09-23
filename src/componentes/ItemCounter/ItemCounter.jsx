@@ -4,7 +4,6 @@ import './ItemCounter.style.css'
 
 
 
-
 const ItemCounter = ({setContador, setStock, valorInicial, stockProductos, contador, stock}) => {
 
     const disminuir = ()=>{

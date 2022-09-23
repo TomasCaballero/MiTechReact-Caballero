@@ -4,6 +4,8 @@ import Swal from 'sweetalert2'
 
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
+
+    const cartLength = parseInt(cart.length);
     
     const addToCart = (item, cantidad)=>{
         if (isInCart(item.id)){
@@ -19,7 +21,7 @@ export const CartProvider = ({children}) => {
             })
             setCart([...cart,{...item, cantidad }])
         }
-        console.log('cart', [...cart,{...item, cantidad}])
+        console.log('cart', [...cart,{...item, cantidad}], cartLength)
     };
 
     const isInCart = (id) =>{
@@ -30,12 +32,22 @@ export const CartProvider = ({children}) => {
         setCart([]);
     }
 
-    const removeItem = ()=>{
-        
+    const removeItem = (productId) => {
+        let index = cart.findIndex(item => item.id === productId);
+        let nuevoArreglo = []
+        cart.forEach((product) => {
+            if(product.id === productId){
+                console.log(product);
+            }else{
+                nuevoArreglo.push(product);
+            }
+        })
+        setCart(nuevoArreglo);
     }
 
+
     return(
-        <CartContext.Provider value={{cart, addToCart, clear, removeItem}}>
+        <CartContext.Provider value={{cart, addToCart, clear, removeItem, cartLength}}>
             {children}
         </CartContext.Provider>
     )

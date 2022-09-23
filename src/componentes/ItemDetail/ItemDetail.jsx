@@ -5,8 +5,6 @@ import { CartContext } from '../../context/cartContext';
 import { useState, useContext } from 'react';
 
 
-let numero = document.querySelector('#numero');
-
 const ItemDetail = ({lista}) => {
   let valorInicial = 1;
   let stockProductos = 5;
@@ -19,10 +17,6 @@ const ItemDetail = ({lista}) => {
     if (contador > 0){
       addToCart(product, contador)
     }
-    // console.log('onAdd', product, contador)
-
-    numero.innerHTML = parseInt(numero.innerHTML)  + parseInt(contador);
-    setStock(stock - contador)
   }
   
 
