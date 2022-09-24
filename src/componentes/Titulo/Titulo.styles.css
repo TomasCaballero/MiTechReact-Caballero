@@ -3,6 +3,9 @@
     position: absolute;
     top: 150px;
     padding-left: 6.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 h2{
     color: black;

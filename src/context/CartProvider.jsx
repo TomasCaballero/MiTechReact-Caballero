@@ -28,11 +28,20 @@ export const CartProvider = ({children}) => {
         return cart.some((item)=> item.id === id)
     };
 
+    const pagoExitoso = () => {
+        Swal.fire({
+            icon: 'success',
+            title: 'El pago se realizo de manera exitosa',
+        })
+    }
+
     const clear = ()=>{
         setCart([]);
     }
 
+    
     const removeItem = (productId) => {
+        // eslint-disable-next-line no-unused-vars
         let index = cart.findIndex(item => item.id === productId);
         let nuevoArreglo = []
         cart.forEach((product) => {
@@ -47,7 +56,7 @@ export const CartProvider = ({children}) => {
 
 
     return(
-        <CartContext.Provider value={{cart, addToCart, clear, removeItem, cartLength}}>
+        <CartContext.Provider value={{cart, addToCart, clear, removeItem, cartLength, pagoExitoso}}>
             {children}
         </CartContext.Provider>
     )
