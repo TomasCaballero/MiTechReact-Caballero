@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/cartContext';
 import { useState, useContext } from 'react';
 
+const rutaInicial = '../img/'
+
 
 
 const ItemDetail = ({lista}) => {
@@ -27,7 +29,7 @@ const ItemDetail = ({lista}) => {
             lista.map((product) => (
               <div className="card-detail" key={product.id}>
                 <div className='imgTitulo'>
-                  <img src={product.img} alt={product.articulo} width={'200px'}/>
+                  <img src={rutaInicial + product.img} alt={product.articulo} width={'200px'}/>
                   <h5>{product.articulo}</h5>
                 </div>
                 <div className='divPrecio'>

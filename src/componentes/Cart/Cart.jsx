@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { CartContext } from "../../context/cartContext"
 import './Cart.style.css'
 
+
 const Cart = () => {
     const {cart, clear, removeItem, pagoExitoso} =useContext(CartContext)
     // eslint-disable-next-line no-unused-vars

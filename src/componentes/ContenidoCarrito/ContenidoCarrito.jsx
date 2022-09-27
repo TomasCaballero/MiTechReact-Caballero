@@ -2,6 +2,7 @@ import "./ContenidoCarrito.styles.css"
 import { CartContext } from "../../context/cartContext"
 import { useContext } from "react"
 
+const rutaInicial = '../img/'
 
 const ContenidoCarrito = () => {
   const {cart, removeItem} =useContext(CartContext)
@@ -17,7 +18,7 @@ const ContenidoCarrito = () => {
             {cart.map((item)=>(
                 <div className="card" key={item.id}>
                   <div className='imgTituloMiniCart'>
-                    <img src={item.img} alt={item.articulo} width={'200px'}/>
+                    <img src={rutaInicial + item.img} alt={item.articulo} width={'200px'}/>
                     <h5>{item.articulo}</h5>
                   </div>
                   <div className="card-body">

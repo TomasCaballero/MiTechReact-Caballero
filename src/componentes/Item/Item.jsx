@@ -1,10 +1,11 @@
 import './Item.style.css'
 
+const rutaInicial = '../img/'
 const Item = ({img, articulo, precio, id, marca}) => {
   return (
     <>
         <div className="card" key={id} role="button">
-            <img src={img} alt={articulo} width={'200px'}/>
+            <img src={rutaInicial + img} alt={articulo} width={'200px'}/>
             <div className="card-body">
                 <h5>{articulo}</h5>
                 <p>uS${precio}</p>
