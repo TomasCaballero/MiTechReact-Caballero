@@ -33,6 +33,7 @@ export const CartProvider = ({children}) => {
             icon: 'success',
             title: 'El pago se realizo de manera exitosa',
         })
+        setCart([]);
     }
 
     const clear = ()=>{
