@@ -13,7 +13,7 @@ const CartWidget = () => {
   let numeroCarrito = 0 + cartLength
   return (
     <div className='btn-container'>
-      <div class="contadorCarrito"><p id="numero">{numeroCarrito}</p></div>
+      <div className="contadorCarrito"><p id="numero">{numeroCarrito}</p></div>
       <button className="btn btn-ligth" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><ion-icon name="cart-outline"></ion-icon></button>
     </div>
   )

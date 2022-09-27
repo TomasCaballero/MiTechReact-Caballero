@@ -5,13 +5,13 @@ import { CartContext } from '../../context/cartContext';
 import { useState, useContext } from 'react';
 
 
+
 const ItemDetail = ({lista}) => {
   let valorInicial = 1;
   let stockProductos = 5;
   const [contador, setContador] = useState(valorInicial)
   const [stock, setStock] = useState(stockProductos)
   const {addToCart} = useContext(CartContext)
-
   
   const onAdd = (product)=>{
     if (contador > 0){
