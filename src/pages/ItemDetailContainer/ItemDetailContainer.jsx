@@ -18,7 +18,7 @@ const ItemDetailContainer = ({product}) => {
       getDoc(queryDoc).then((res)=>{
         const getDocData = res.data()
         console.log(getDocData)
-        setProductDetail(getDocData)
+        // setProductDetail(getDocData)
         console.log(productDetail)
       }) 
     /*})*/

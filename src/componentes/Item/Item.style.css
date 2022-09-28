@@ -4,12 +4,29 @@
     justify-content: center;
     align-items: center;
 }
+.card:hover{
+    background-color: white;
+    transition: all 500ms;
+    -webkit-box-shadow: 0px 0px 84px -31px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 0px 84px -31px rgba(0,0,0,0.52);
+    box-shadow: 0px 0px 84px -31px rgba(0,0,0,0.52);
+}
 img{
     width: 175px;
+    padding: 5px;
 }
 .card-body{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.btn-detalles{
+    width: 100%;
+    margin-top: -10px;
+}
+.btn-detalles:hover{
+    background-color: rgb(20, 19, 19);
+    color: white;
 }

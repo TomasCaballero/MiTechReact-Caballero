@@ -11,6 +11,7 @@ const Item = ({img, articulo, precio, id, marca}) => {
                 <p>uS${precio}</p>
                 <span style={{display: 'none'}}>{marca}</span>
             </div>
+            <div className='btn btn-detalles'>Ver detalles</div>
         </div>
     </>
   )
