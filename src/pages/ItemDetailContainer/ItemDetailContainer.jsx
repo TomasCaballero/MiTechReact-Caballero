@@ -1,8 +1,8 @@
-import data from "../../componentes/MockData/MockData"
+// import data from "../../componentes/MockData/MockData"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import ItemDetail from "../../componentes/ItemDetail/ItemDetail"
-// import { getDoc, getFirestore, doc } from "firebase/firestore"
+import { getDoc, getFirestore, doc} from "firebase/firestore"
 
 
 const ItemDetailContainer = ({product}) => {
@@ -10,21 +10,23 @@ const ItemDetailContainer = ({product}) => {
   const [productDetail, setProductDetail] = useState([])
   const idParams = id
 
+
   useEffect(()=>{
-    getProductsById.then((response)=>{
-        setProductDetail(response)
-      })
-  },/*[]*/)
+    /*const getProductById = new Promise((resolve, reject)=>{*/
+      const db = getFirestore();
+      const queryDoc = doc(db, 'product', idParams);
+      getDoc(queryDoc).then((res)=>{
+        const getDocData = res.data()
+        console.log(getDocData)
+        setProductDetail(getDocData)
+        console.log(productDetail)
+      }) 
+    /*})*/
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
 
   
-  const getProductsById = new Promise((resolve, reject)=>{
-      setTimeout(()=>{
-        resolve(data.filter(product=>product.id === parseInt(idParams)));
-      }, 2000);
-  });
-
-
-
 
   return (
     <>
@@ -63,7 +65,8 @@ export default ItemDetailContainer;
 
 
 
-  //-------------------------
+  //-------------------------EL QUE FUNCIONA CON EL MOCKDATA
+
   // useEffect(()=>{
   //   getProductsById.then((response)=>{
   //       setProductDetail(response)
