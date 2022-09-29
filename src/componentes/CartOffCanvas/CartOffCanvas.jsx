@@ -11,7 +11,7 @@ const CartOffCanvas = () => {
   precioTotal = cart.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
 
   return (
-    <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div className="offcanvas-header">
             <h5 id="offcanvasRightLabel">Tu Carrito contiene {cartLength} productos</h5>
             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>

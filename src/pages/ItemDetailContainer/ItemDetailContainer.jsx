@@ -7,26 +7,25 @@ import { getDoc, getFirestore, doc} from "firebase/firestore"
 
 const ItemDetailContainer = ({product}) => {
   const {id} = useParams();
-  const [productDetail, setProductDetail] = useState([])
+  let [productDetail, setProductDetails] = useState([])
   const idParams = id
 
-
   useEffect(()=>{
-    /*const getProductById = new Promise((resolve, reject)=>{*/
-      const db = getFirestore();
-      const queryDoc = doc(db, 'product', idParams);
-      getDoc(queryDoc).then((res)=>{
-        const getDocData = res.data()
-        console.log(getDocData)
-        // setProductDetail(getDocData)
-        console.log(productDetail)
-      }) 
-    /*})*/
+    getProductById()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const getProductById = ()=>{
+    const db = getFirestore();
+    const queryDoc = doc(db, 'product', idParams);
+    getDoc(queryDoc).then((res)=>{
+      const getDocData = {id: res.id, ...res.data()}
+      console.log(getDocData)
+      setProductDetails(getDocData)
+      console.log(productDetail)
+    })
+  }
 
-  
 
   return (
     <>
@@ -142,3 +141,25 @@ export default ItemDetailContainer;
   //       resolve(queryDoc.filter(product=>product.id === parseInt(idParams)));
   //     }, 2000);
   // });
+
+
+
+  //---------------------------------
+  /*const {id} = useParams();
+  let [productDetail, setProductDetails] = useState([])
+  const idParams = id
+
+  useEffect(()=>{
+    getProductById()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const getProductById = ()=>{
+    const db = getFirestore();
+    const queryDoc = doc(db, 'product', idParams);
+    getDoc(queryDoc).then((res)=>{
+      const getDocData = res.data()
+      setProductDetails(getDocData)
+      console.log(productDetail)
+    })
+  }*/
