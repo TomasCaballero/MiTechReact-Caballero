@@ -7,24 +7,25 @@ import { getDoc, getFirestore, doc} from "firebase/firestore"
 
 const ItemDetailContainer = ({product}) => {
   const {id} = useParams();
-  let [productDetail, setProductDetails] = useState([])
+  let [productDetail, setProductDetail] = useState([])
   const idParams = id
 
-  useEffect(()=>{
-    getProductById()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  const getProductById = ()=>{
-    const db = getFirestore();
-    const queryDoc = doc(db, 'product', idParams);
+  const getProductById = new Promise((resolve, reject)=>{
+    const db = getFirestore()
+    const queryDoc = doc(db, 'product', idParams)
     getDoc(queryDoc).then((res)=>{
       const getDocData = {id: res.id, ...res.data()}
-      console.log(getDocData)
-      setProductDetails(getDocData)
-      console.log(productDetail)
+      const array = []
+      array.push(getDocData)
+      resolve(array)
     })
-  }
+  });
+
+  useEffect(()=>{
+    getProductById.then((response)=>{
+      setProductDetail(response)
+    })
+  },/*[]*/)
 
 
   return (
@@ -163,3 +164,21 @@ export default ItemDetailContainer;
       console.log(productDetail)
     })
   }*/
+
+
+  //--------------------------EL ULTIMO
+  // useEffect(()=>{
+  //   getProductById()
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
+
+  // const getProductById = ()=>{
+  //   const db = getFirestore();
+  //   const queryDoc = doc(db, 'product', idParams);
+  //   getDoc(queryDoc).then((res)=>{
+  //     const getDocData = {id: res.id, ...res.data()}
+  //     console.log(getDocData)
+  //     setProductDetail(getDocData)
+  //     console.log(productDetail)
+  //   })
+  // }

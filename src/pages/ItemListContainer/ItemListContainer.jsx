@@ -6,33 +6,43 @@ import { getFirestore, getDocs, collection, query, where} from 'firebase/firesto
 const ItemListContainer = () => {
     const [productList, setProductList] = useState([])
     const {marca} = useParams();
-    console.log(marca)
 
     useEffect(()=>{
-        getProducts()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    const getProducts = ()=>{
-        const db = getFirestore();
-        const querySnapshot = collection(db, 'product');
+        const getProducts = new Promise((resolve, reject)=>{
+            const db = getFirestore ()
+            const querySnapshot = collection(db, 'product')
+            
+            if(marca){
+                const queryFilter = query(querySnapshot, where('marca', '==', marca));
+                getDocs(queryFilter).then((response)=>{
+                    const data = response.docs.map((doc)=>{
+                        return {id: doc.id, ...doc.data()}
+                    })
+                    setProductList(data)
+                })
+            }else{
+                getDocs(querySnapshot).then((response)=>{
+                    const data = response.docs.map((doc)=>{
+                        return {id: doc.id, ...doc.data()}
+                    })
+                    setProductList(data)
+                })
+            }
+        })
+        
         if(marca === undefined){
-            getDocs(querySnapshot).then((response)=>{
-                const data = response.docs.map((doc)=>{
-                    return {id: doc.id, ...doc.data()}
-                })
-                setProductList(data)
-            })
-        }else{
-            const queryFilter = query(querySnapshot, where('marca', '==', marca));
-            getDocs(queryFilter).then((response)=>{
-                const data = response.docs.map((doc)=>{
-                    return {id: doc.id, ...doc.data()}
-                })
-                setProductList(data)
+            getProducts.then((response)=>{
+            setProductList(response)
+        })}else{
+            getProducts
+            .then((res)=>{
+                const filterData = res.filter(product => product.marca === marca)
+                setProductList(filterData)
             })
         }
-    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[productList])
+    
 
     return (
         <>
@@ -104,3 +114,32 @@ export default ItemListContainer;
         // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[productList])*/
+
+
+
+    //----------------------------------
+    // const getProducts = ()=>{
+    //     const db = getFirestore();
+    //     const querySnapshot = collection(db, 'product');
+    //     if(marca === undefined){
+            // getDocs(querySnapshot).then((response)=>{
+            //     const data = response.docs.map((doc)=>{
+            //         return {id: doc.id, ...doc.data()}
+            //     })
+            //     setProductList(data)
+    //         })
+    //     }else{
+    //         const queryFilter = query(querySnapshot, where('marca', '==', marca));
+    //         getDocs(queryFilter).then((response)=>{
+    //             const data = response.docs.map((doc)=>{
+    //                 return {id: doc.id, ...doc.data()}
+    //             })
+    //             setProductList(data)
+    //         })
+    //     }
+    // }
+
+    // useEffect(()=>{
+    //     getProducts()
+    // // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
