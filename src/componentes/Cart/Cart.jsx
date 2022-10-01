@@ -2,15 +2,66 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/cartContext"
 import './Cart.style.css'
+import { collection, addDoc, getFirestore/*, doc, updateDoc*/ } from "firebase/firestore"
+import moment from "moment/moment"
+import Swal from 'sweetalert2'
 
 const rutaInicial = '../img/'
 
 const Cart = () => {
-    const {cart, clear, removeItem, pagoExitoso} =useContext(CartContext)
+    const {cart, clear, removeItem, /*pagoExitoso*/} =useContext(CartContext)
     // eslint-disable-next-line no-unused-vars
     let [precioTotal, setPrecioTotal] = useState(0)
+    const db = getFirestore()
+
     
     precioTotal = cart.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
+
+    const createOrder= ()=>{
+        const order ={
+            buyer: {
+                name: 'Tomas',
+                phone: 1120304982,
+                email: 'tomastomas@tomas.com'
+            },
+            items: cart,
+            total: precioTotal,
+            date: moment().format()
+        }
+        const queryOrder = collection(db, 'order');
+        addDoc(queryOrder, order)
+        .then(({id})=>{
+            console.log({id})
+            Swal.fire({
+                icon: 'success',
+                title: 'El pago se realizo de manera exitosa',
+            })
+        })
+        .catch(()=>{
+            alert('Tu compra no puedo ser realizada')
+        })
+    }
+
+    // const updateOrder = ()=>{
+    //     const idOrder = 'XQR3ZpgcxzGSgYHZHrwc';
+    //     const order = {
+    //         buyer: {
+    //             name: 'Tomas',
+    //             phone: 1120304982,
+    //             email: 'tomastomas@tomas.com'
+    //         },
+    //         items: cart.pop(),
+    //         total: precioTotal,
+    //     };
+    //     const queryUpdate = doc(db, 'order', idOrder);
+    //     updateDoc(queryUpdate, order)
+    //     .then((res)=>{
+    //         console.log(res)
+    //     })
+    //     .catch((error)=>{
+    //         console.log(error)
+    //     })
+    // }
 
 
 
@@ -54,7 +105,8 @@ const Cart = () => {
                 ))}
                 <div className="precioTotalPagar">
                     <div>Precio total: uS$<strong id="precioTotal">{precioTotal}</strong></div>
-                    <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> pagoExitoso()}>Pagar</button>
+                    <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> createOrder()}>Pagar</button>
+                    {/* <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> updateOrder()}>Editar orden</button> */}
                 </div>
                 <div className="btnVaciarCarrito">
                     <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> clear()}>Vaciar Carrito</button>
