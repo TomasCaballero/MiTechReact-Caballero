@@ -6,26 +6,22 @@ import reportWebVitals from './reportWebVitals';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBUjn0fUUG5E8KeRCTNuxpfTaSBZuHSStw",
-  authDomain: "mitech-caballero.firebaseapp.com",
-  projectId: "mitech-caballero",
-  storageBucket: "mitech-caballero.appspot.com",
-  messagingSenderId: "438235670193",
-  appId: "1:438235670193:web:18ed214b17898696496490",
-  measurementId: "G-MTZBEJ2WXF"
+  apiKey: "AIzaSyC2O_zK9urxSKFpysM93MpXcZYZr2Lkz2M",
+  authDomain: "mitech-caballero2.firebaseapp.com",
+  projectId: "mitech-caballero2",
+  storageBucket: "mitech-caballero2.appspot.com",
+  messagingSenderId: "734833030981",
+  appId: "1:734833030981:web:ae0c14ee4b357f58f5302c"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 // eslint-disable-next-line no-unused-vars
-const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
