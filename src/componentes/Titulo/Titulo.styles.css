@@ -1,11 +1,9 @@
 #presentacion{
     z-index: 1;
-    position: absolute;
-    top: 150px;
-    padding-left: 6.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 10rem;
 }
 h2{
     color: black;

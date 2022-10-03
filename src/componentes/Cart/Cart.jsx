@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 const rutaInicial = '../img/'
 
 const Cart = () => {
-    const {cart, clear, removeItem, /*pagoExitoso*/} =useContext(CartContext)
+    const {cart, clear, removeItem} =useContext(CartContext)
     // eslint-disable-next-line no-unused-vars
     let [precioTotal, setPrecioTotal] = useState(0)
     const db = getFirestore()

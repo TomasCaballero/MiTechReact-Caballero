@@ -1,6 +1,5 @@
 import React from 'react'
 import './CartWidget.styles.css'
-// import { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../../context/cartContext'
 
@@ -8,7 +7,6 @@ import { CartContext } from '../../context/cartContext'
 
 
 const CartWidget = () => {
-  // let {cantidadProductos, setCantidadProductos} = useState(0)
   const {cartLength} = useContext(CartContext)
   let numeroCarrito = 0 + cartLength
   return (

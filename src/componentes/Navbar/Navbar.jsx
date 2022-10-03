@@ -5,7 +5,6 @@ import CartWidget from '../CartWidget/CartWidget'
 
 
 const Navbar = () => {
-  // const filtrarMarca = data.filter(product=>product.id === parseInt(idParams)
   
   return (
     <div className='contenedorNavBar'>

@@ -24,7 +24,7 @@ const ItemDetail = ({lista}) => {
 
 
   return (
-  <div className="contenedorProductos">
+  <div className="contenedorProductos2">
         {
             lista.map((product) => (
               <div className="card-detail" key={product.id}>
