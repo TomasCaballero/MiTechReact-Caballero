@@ -25,6 +25,7 @@ const ItemDetailContainer = ({product}) => {
     getProductById.then((response)=>{
       setProductDetail(response)
     })
+    console.log(getProductById)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
