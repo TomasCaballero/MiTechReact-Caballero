@@ -1,3 +1,22 @@
+# My React Project
+![N|Solid](https://jobs.coderhouse.com/assets/logos_coderhouse.png)
+
+## _Author_
+> Tomás Bautista Caballero: caballerotomas97@gmail.com
+
+#### _Demo_
+gif
+#### _Tech_
+- React
+#### _Main libraries used in the project_
+- Bootstrap
+- SweetAlert
+- Firebase
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
