@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/cartContext"
 import './Cart.style.css'
-import { collection, addDoc, getFirestore/*, doc, updateDoc*/ } from "firebase/firestore"
+import { collection, addDoc, getFirestore} from "firebase/firestore"
 import moment from "moment/moment"
 import Swal from 'sweetalert2'
 
@@ -52,29 +52,6 @@ const Cart = () => {
             }
         })
     }
-
-    // const updateOrder = ()=>{
-    //     const idOrder = 'XQR3ZpgcxzGSgYHZHrwc';
-    //     const order = {
-    //         buyer: {
-    //             name: 'Tomas',
-    //             phone: 1120304982,
-    //             email: 'tomastomas@tomas.com'
-    //         },
-    //         items: cart.pop(),
-    //         total: precioTotal,
-    //     };
-    //     const queryUpdate = doc(db, 'order', idOrder);
-    //     updateDoc(queryUpdate, order)
-    //     .then((res)=>{
-    //         console.log(res)
-    //     })
-    //     .catch((error)=>{
-    //         console.log(error)
-    //     })
-    // }
-
-
 
     return (
         <div className="contenidoCarrito">

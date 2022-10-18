@@ -6,8 +6,6 @@ import { useState, useContext } from 'react';
 
 const rutaInicial = '../img/'
 
-
-
 const ItemDetail = ({lista}) => {
   let valorInicial = 1;
   let stockProductos = 5;
@@ -21,8 +19,6 @@ const ItemDetail = ({lista}) => {
     }
   }
   
-
-
   return (
   <div className="contenedorProductos2">
         {

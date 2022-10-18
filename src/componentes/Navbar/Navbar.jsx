@@ -57,11 +57,6 @@ const Navbar = () => {
                   </Link>
                 </ul>
               </li>
-              {/* <li className="nav-item d-flex justify-content-center align-content-center">
-                <Link to={"/contacto"} style={{ textDecoration: 'none'}}>
-                  <div className="nav-link active" aria-current="page" role="button">Contacto</div>
-                </Link>
-              </li> */}
             </ul>
             <div>
               <ul>
