@@ -9,7 +9,7 @@
 
 
 #### _Tech_
-- React
+- React.js
 #### _Main libraries used in the project_
 - Bootstrap
 - SweetAlert
