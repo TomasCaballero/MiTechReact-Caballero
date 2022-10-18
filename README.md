@@ -5,7 +5,8 @@
 > Tomás Bautista Caballero: caballerotomas97@gmail.com
 
 #### _Demo_
-gif
+[ScreenRecorder_2022-10-18_f81a6ce1-48e1-4194-b80f-cd026ea5f8c3.webm](https://user-images.githubusercontent.com/105325625/196556099-3292990c-51d0-4b25-8738-c2c74ff90dbf.webm)
+
 #### _Tech_
 - React
 #### _Main libraries used in the project_
