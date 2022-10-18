@@ -123,27 +123,27 @@ const Cart = () => {
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Ingrese sus datos</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div className="inputOrder">
-                                    <label htmlFor="name">Apellido y nombre:</label>
-                                    <input type="text" name="name" id="name" value={order.buyer.name} onChange={handleInputChange}/>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Ingrese sus datos</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div className="inputOrder">
-                                    <label htmlFor="phone">Teléfono:</label>
-                                    <input type="number" name="phone" id="phone" value={order.buyer.phone} onChange={handleInputChange}/>
+                                <div class="modal-body">
+                                    <div className="inputOrder">
+                                        <label htmlFor="name">Apellido y nombre:</label>
+                                        <input type="text" name="name" id="name" value={order.buyer.name} onChange={handleInputChange}/>
+                                    </div>
+                                    <div className="inputOrder">
+                                        <label htmlFor="phone">Teléfono:</label>
+                                        <input type="number" name="phone" id="phone" value={order.buyer.phone} onChange={handleInputChange}/>
+                                    </div>
+                                    <div className="inputOrder">
+                                        <label htmlFor="email">Correo:</label>
+                                        <input type="email" name="email" id="email" value={order.buyer.email} onChange={handleInputChange}/>
+                                    </div>
                                 </div>
-                                <div className="inputOrder">
-                                    <label htmlFor="email">Correo:</label>
-                                    <input type="email" name="email" id="email" value={order.buyer.email} onChange={handleInputChange}/>
+                                <div class="modal-footer">
+                                    <button className='btn btn-dark pl-2 irAlCarrito' data-bs-dismiss="modal" onClick={()=> createOrder()}>Pagar</button>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> createOrder()}>Pagar</button>
-                            </div>
                             </div>
                         </div>
                     </div>

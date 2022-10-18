@@ -19,6 +19,11 @@
     margin-left: -20px;
     margin-right: 25px;
 }
+@media all and (max-width: 992px){
+    .divIconoMarca{
+        margin-left: -60px;
+    }
+}
 .contenedorNavbar{
     display: flex;
     flex-direction: row;

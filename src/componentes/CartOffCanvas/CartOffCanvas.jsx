@@ -18,9 +18,9 @@ const CartOffCanvas = () => {
         </div>
         <div className="py-2 d-flex align-content-center justify-content-center mx-auto mb-1">US$<div className="precioTotal">{precioTotal}</div></div>
         <Link to={"/cart"} style={{ textDecoration: 'none'}} className='irAlCarrito'>
-          <button id="comprar" className="btn btn-dark border-1 border-light w-25 py-2 d-flex align-content-center justify-content-center mx-auto mb-1">Ir a pagar</button>
+          <button id="comprar" className="btn btn-dark border-1 border-light w-25 py-2 d-flex align-content-center justify-content-center mx-auto mb-1" data-bs-dismiss="offcanvas">Ir a pagar</button>
         </Link>
-        <div className="offcanvas-body">
+        <div className="offcanvas-body bg-dark">
             <ContenidoCarrito />
         </div>
     </div>
