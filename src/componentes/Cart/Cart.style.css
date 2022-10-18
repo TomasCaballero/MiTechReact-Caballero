@@ -125,3 +125,20 @@
         padding-right: 0rem;
     }
 }
+
+.inputOrder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputOrder input{
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+.inputOrder label{
+    font-weight: 600;
+}

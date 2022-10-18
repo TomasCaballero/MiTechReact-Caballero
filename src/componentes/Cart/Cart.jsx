@@ -17,17 +17,17 @@ const Cart = () => {
     
     precioTotal = cart.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
 
+    const [order, setOrder] = useState({
+        buyer: {
+            name: '',
+            phone: 0,
+            email: ''
+        },
+        items: cart,
+        total: precioTotal,
+        date: moment().format()
+    })
     const createOrder= ()=>{
-        const order ={
-            buyer: {
-                name: 'Tomas',
-                phone: 1120304982,
-                email: 'tomastomas@tomas.com'
-            },
-            items: cart,
-            total: precioTotal,
-            date: moment().format()
-        }
         const queryOrder = collection(db, 'order');
         addDoc(queryOrder, order)
         .then(({id})=>{
@@ -35,10 +35,21 @@ const Cart = () => {
             Swal.fire({
                 icon: 'success',
                 title: 'El pago se realizo de manera exitosa',
+                text: 'Su orden de compra es: ' + id
             })
         })
         .catch(()=>{
             alert('Tu compra no puedo ser realizada')
+        })
+    }
+
+    const handleInputChange = (e) => {
+        setOrder({
+            ...order,
+            buyer:{
+                ...order.buyer,
+                [e.target.name]: e.target.value
+            }
         })
     }
 
@@ -105,8 +116,37 @@ const Cart = () => {
                 ))}
                 <div className="precioTotalPagar">
                     <div>Precio total: uS$<strong id="precioTotal">{precioTotal}</strong></div>
-                    <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> createOrder()}>Pagar</button>
-                    {/* <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> updateOrder()}>Editar orden</button> */}
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Pagar
+                    </button>
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Ingrese sus datos</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div className="inputOrder">
+                                    <label htmlFor="name">Apellido y nombre:</label>
+                                    <input type="text" name="name" id="name" value={order.buyer.name} onChange={handleInputChange}/>
+                                </div>
+                                <div className="inputOrder">
+                                    <label htmlFor="phone">Teléfono:</label>
+                                    <input type="number" name="phone" id="phone" value={order.buyer.phone} onChange={handleInputChange}/>
+                                </div>
+                                <div className="inputOrder">
+                                    <label htmlFor="email">Correo:</label>
+                                    <input type="email" name="email" id="email" value={order.buyer.email} onChange={handleInputChange}/>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> createOrder()}>Pagar</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="btnVaciarCarrito">
                     <button className='btn btn-dark pl-2 irAlCarrito' onClick={()=> clear()}>Vaciar Carrito</button>
