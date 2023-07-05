@@ -16,14 +16,17 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter className="App App-header">
+        {/* Navbar */}
         <Navbar/>
         <CartOffCanvas/>
+
+        {/* Rutas */}
         <Routes>
           <Route path="/" element={<Titulo/>}/>
         </Routes>
         <Routes>
           <Route path="/" element={<ItemListContainer/>}/>
-          <Route path="/category/:marca" element={<ItemListContainer/>}/> 
+          <Route path="/category/:marca" element={<ItemListContainer/>}/>
           <Route path='/details/:id' element={<ItemDetailContainer/>}/>
           <Route path="/cart" element={<Cart/>}/>
         </Routes>
