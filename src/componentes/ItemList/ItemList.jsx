@@ -6,7 +6,7 @@ const ItemList = ({lista}) => {
     <div className="contenedorProductos">
         {
           lista.map((product) => (
-            <Link key={product.id} to={"details/" + product.id} style={{ textDecoration: 'none'}}>
+            <Link key={product.id} to={"/details/" + product.id} style={{ textDecoration: 'none'}}>
               <Item articulo={product.articulo} precio={product.precio} img={product.img} marca={product.marca}/>
             </Link>
           ))
