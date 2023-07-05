@@ -5,9 +5,11 @@
 > Tomás Bautista Caballero: caballerotomas97@gmail.com
 
 #### _Demo_
-gif
+![2022-10-18 19-38-12](https://user-images.githubusercontent.com/105325625/196559342-7af98243-84f3-47b6-a3ad-05826cc0150d.gif)
+
+
 #### _Tech_
-- React
+- React.js
 #### _Main libraries used in the project_
 - Bootstrap
 - SweetAlert
